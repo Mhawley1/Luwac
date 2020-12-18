@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title=" terrain" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin\Debug\ terrain" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Debug\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="include" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin\Release\ terrain" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+			<Add directory="C:\glfw\include" />
+			<Add directory="..\..\include" />
+		</Compiler>
+		<Linker>
+			<Add library="C:\glfw\lib\libglfw3.a" />
+			<Add library="C:\glfw\lib\libglfw3dll.a" />
+			<Add library="C:\MinGW\lib\libopengl32.a" />
+			<Add library="C:\Windows\System32\gdi32.dll" />
+			<Add directory="C:\glfw\lib" />
+		</Linker>
+		<Unit filename="main.cpp" />
+		<Unit filename="shader.fs" />
+		<Unit filename="shader.vs" />
+		<Unit filename="..\..\Downloads\glad\src\glad.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\include\Screenshot 2020-12-11 115405.jpg" />
+		<Unit filename="..\..\include\Untitled.bmp" />
+		<Unit filename="..\..\include\bmp.h" />
+		<Unit filename="..\..\include\camera.h" />
+		<Unit filename="..\..\include\shader.h" />
+		<Unit filename="..\..\include\stb_image.h" />
+		<Unit filename="..\..\include\ter.h" />
+		<Unit filename="..\..\src\shader.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
