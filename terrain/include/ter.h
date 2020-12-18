@@ -132,17 +132,16 @@ std::vector<float> Terrain_gen::verticies_gen (int x, int y, const char* filenam
               //  cout << verticies[i]<< " " ;
                 i++;
 
-                verticies[i] = current_row;
-               // cout << verticies[i]<< " " ;
-                i++;
+
 
                 std::vector<unsigned int> z_height = example_bmp.getPixel(current_column,current_row);
                 float normal_height = (1.0f/255.0f)*6.0f;
                 float z_height_normal = z_height[1]*normal_height;
-               // cout << "z_heigh * normal_heigt" << normal_height<< endl;
                 verticies[i] = z_height_normal;
-              //  cout << verticies[i]<< " " ;
+                i++;
 
+                verticies[i] = current_row;
+               // cout << verticies[i]<< " " ;
                 i++;
 
                 verticies[i] = start_s;
