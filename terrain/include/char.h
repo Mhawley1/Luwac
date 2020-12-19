@@ -116,6 +116,7 @@ letter_1 = feed1;
 input_var1 = feed2;
 letter_2 = feed3;
 input_var2 = feed4;
+std::cout << letter_1 << input_var1 << letter_2 << input_var2 << endl;
 };
 
 

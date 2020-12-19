@@ -15,6 +15,9 @@
 					<Add option="-g" />
 					<Add directory="include" />
 				</Compiler>
+				<Linker>
+					<Add directory="../../include" />
+				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="bin/Release/ terrain" prefix_auto="1" extension_auto="1" />
@@ -34,8 +37,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 			<Add directory="C:/glfw/include" />
-			<Add directory="C:/Users/mathe/Desktop/terrain/Desktop" />
-			<Add directory="C:/Users/mathe/Desktop/terrain/include" />
+			<Add directory="../../include" />
 		</Compiler>
 		<Linker>
 			<Add library="C:/glfw/lib/libglfw3.a" />
@@ -52,6 +54,7 @@
 		<Unit filename="../../include/char.h" />
 		<Unit filename="../../include/grass.png" />
 		<Unit filename="../../include/shader.h" />
+		<Unit filename="../../include/stb_image.h" />
 		<Unit filename="../../include/ter.h" />
 		<Unit filename="../../src/shader.cpp" />
 		<Unit filename="../stb_image.h" />

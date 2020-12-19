@@ -106,6 +106,8 @@ int main()
     char_ui_gen feedback;
     std::vector<unsigned int> indicies_ui = feedback.gen_UI_space_i();
     std::vector<float> verticies_ui = feedback.gen_UI_space_v();
+
+    feedback.Update_disp("A","1.0","B","2.0");
     //end flat plane for text
 
     // start terrain buffers
@@ -206,7 +208,7 @@ int main()
     // load image, create texture and generate mipmaps
     int width_face, height_face, nrChannels_face;
     // The FileSystem::getPath(...) is part of the GitHub repository so we can find files on any IDE/platform; replace it with your own image path.
-    unsigned char *data_face = stbi_load("C:\\Users\\mathe\\Desktop\\terrain\\include\\grass.png", &width, &height, &nrChannels, 0);
+    unsigned char *data_face = stbi_load("..\\..\\include\\grass.png", &width, &height, &nrChannels, 0);
     if (data_face)
     {
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data_face);

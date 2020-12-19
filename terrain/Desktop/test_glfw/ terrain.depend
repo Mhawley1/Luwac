@@ -605,3 +605,75 @@
 	<vector>
 	<fstream>
 
+1608302322 source:c:\users\mathe\desktop\luwac-main\terrain\downloads\glad\src\glad.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<glad/glad.h>
+	<windows.h>
+	<winapifamily.h>
+	<dlfcn.h>
+
+1608302322 source:c:\users\mathe\desktop\luwac-main\terrain\src\shader.cpp
+
+1608345981 source:c:\users\mathe\desktop\luwac-main\terrain\desktop\test_glfw\main.cpp
+	<glad/glad.h>
+	<GLFW/glfw3.h>
+	<glm/glm.hpp>
+	<glm/gtc/matrix_transform.hpp>
+	<glm/gtc/type_ptr.hpp>
+	"stb_image.h"
+	"camera.h"
+	"shader.h"
+	"ter.h"
+	"char.h"
+	<iostream>
+
+1608302322 c:\users\mathe\desktop\luwac-main\terrain\include\stb_image.h
+	"stb_image.h"
+	<stdio.h>
+	<stdlib.h>
+	<stdarg.h>
+	<stddef.h>
+	<stdlib.h>
+	<string.h>
+	<limits.h>
+	<math.h>
+	<stdio.h>
+	<assert.h>
+	<stdint.h>
+	<emmintrin.h>
+	<intrin.h>
+	<arm_neon.h>
+
+1608302322 c:\users\mathe\desktop\luwac-main\terrain\include\camera.h
+	<glad/glad.h>
+	<glm/glm.hpp>
+	<glm/gtc/matrix_transform.hpp>
+	<vector>
+
+1608302322 c:\users\mathe\desktop\luwac-main\terrain\include\shader.h
+	<glad/glad.h>
+	<glm/glm.hpp>
+	<string>
+	<fstream>
+	<sstream>
+	<iostream>
+
+1608302322 c:\users\mathe\desktop\luwac-main\terrain\include\ter.h
+	<iostream>
+	<vector>
+	<fstream>
+	"bmp.h"
+
+1608302322 c:\users\mathe\desktop\luwac-main\terrain\include\bmp.h
+	<iostream>
+	<vector>
+	<fstream>
+	<math.h>
+
+1608345981 c:\users\mathe\desktop\luwac-main\terrain\include\char.h
+	<iostream>
+	<vector>
+	<fstream>
+
