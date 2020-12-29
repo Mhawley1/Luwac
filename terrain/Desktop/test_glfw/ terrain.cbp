@@ -56,6 +56,7 @@
 		<Unit filename="../../include/shader.h" />
 		<Unit filename="../../include/stb_image.h" />
 		<Unit filename="../../include/ter.h" />
+		<Unit filename="../../include/text.png" />
 		<Unit filename="../../src/shader.cpp" />
 		<Unit filename="../stb_image.h" />
 		<Unit filename="main.cpp" />

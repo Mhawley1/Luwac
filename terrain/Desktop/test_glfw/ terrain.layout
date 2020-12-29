@@ -2,9 +2,19 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="shader.vs" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="117" topLine="0" />
+			<Cursor1 position="3409" topLine="96" />
+		</Cursor>
+	</File>
+	<File name="..\stb_image.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="27210" topLine="662" />
+		</Cursor>
+	</File>
+	<File name="..\..\include\stb_image.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="151196" topLine="4120" />
 		</Cursor>
 	</File>
 	<File name="shader_flat.vs" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -17,32 +27,18 @@
 			<Cursor1 position="4010" topLine="101" />
 		</Cursor>
 	</File>
-	<File name="..\stb_image.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="27210" topLine="662" />
-		</Cursor>
-	</File>
-	<File name="..\..\include\shader.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4307" topLine="109" />
-		</Cursor>
-	</File>
 	<File name="shader_flat.fs" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="308" topLine="3" />
-		</Cursor>
-	</File>
-	<File name="shader.fs" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="376" topLine="3" />
+			<Cursor1 position="308" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="..\..\include\char.h" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="3579" topLine="79" />
+			<Cursor1 position="12897" topLine="0" />
 		</Cursor>
 		<Folding>
-			<Collapse line="77" />
+			<Collapse line="75" />
+			<Collapse line="108" />
 		</Folding>
 	</File>
 	<File name="..\..\include\ter.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -53,9 +49,19 @@
 			<Collapse line="101" />
 		</Folding>
 	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+	<File name="shader.fs" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="3421" topLine="94" />
+			<Cursor1 position="376" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\..\include\shader.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4307" topLine="109" />
+		</Cursor>
+	</File>
+	<File name="shader.vs" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="117" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

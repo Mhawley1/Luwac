@@ -96,7 +96,7 @@ int main()
     unsigned int terrain_length = 50 ;
       Terrain_gen level;
     std::vector<unsigned int> indicies = level.indicies_gen (terrain_length,terrain_height);
-    std::vector<float> verticies = level.verticies_gen(terrain_length,terrain_height,"C:\\Users\\mathe\\Pictures\\test.bmp");
+    std::vector<float> verticies = level.verticies_gen(terrain_length,terrain_height,"..\\..\\include\\test.bmp");
       unsigned int ind_num_elements_2 = indicies.size();
     cout << "indicies variable" << ind_num_elements_2  << endl;
 
@@ -105,9 +105,9 @@ int main()
     // start char UI class
     char_ui_gen feedback;
     std::vector<unsigned int> indicies_ui = feedback.gen_UI_space_i();
-    std::vector<float> verticies_ui = feedback.gen_UI_space_v();
+    std::array<float,100> verticies_ui = feedback.gen_UI_space_v();
 
-    feedback.Update_disp("A","1.0","B","2.0");
+    verticies_ui = feedback.Update_disp('i',111.111f,'b',2.222222f);
     //end flat plane for text
 
     // start terrain buffers
@@ -177,7 +177,7 @@ int main()
     // load image, create texture and generate mipmaps
     int width, height, nrChannels;
     // The FileSystem::getPath(...) is part of the GitHub repository so we can find files on any IDE/platform; replace it with your own image path.
-    unsigned char *data = stbi_load("C:\\Users\\mathe\\Pictures\\civet.jpg", &width, &height, &nrChannels, 0);
+    unsigned char *data = stbi_load("..\\..\\include\\civet.jpg", &width, &height, &nrChannels, 0);
     if (data)
     {
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
@@ -208,7 +208,7 @@ int main()
     // load image, create texture and generate mipmaps
     int width_face, height_face, nrChannels_face;
     // The FileSystem::getPath(...) is part of the GitHub repository so we can find files on any IDE/platform; replace it with your own image path.
-    unsigned char *data_face = stbi_load("..\\..\\include\\grass.png", &width, &height, &nrChannels, 0);
+    unsigned char *data_face = stbi_load("..\\..\\include\\text.png", &width, &height, &nrChannels, 0);
     if (data_face)
     {
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data_face);
