@@ -65,8 +65,9 @@ BitMap::BitMap( const char * filename) {
         inf>>hex>>a;
         m_bmpFileHeader[i] = a;
     }
+
     if(m_bmpFileHeader[0]!='B' || m_bmpFileHeader[1]!='M') {
-        cerr<<"Your info header might be different!\nIt should start with 'BM'.\n";
+        cerr<<"Your info header might be different!\nIt should start with lol 'BM'.\n" ;
     }
 
     /*

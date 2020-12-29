@@ -1,37 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
-	<ActiveTarget name="Debug" />
+	<ActiveTarget name="Release" />
 	<File name="..\stb_image.h" open="0" top="0" tabpos="3">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="1">
+	<File name="main.cpp" open="1" top="1" tabpos="1">
+		<Cursor position="3008" topLine="83" />
+	</File>
+	<File name="shader.fs" open="0" top="0" tabpos="5">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="shader.fs" open="1" top="0" tabpos="5">
+	<File name="shader.vs" open="0" top="0" tabpos="4">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="shader.vs" open="1" top="0" tabpos="4">
-		<Cursor position="0" topLine="0" />
-	</File>
-	<File name="shader_flat.fs" open="1" top="0" tabpos="6">
+	<File name="shader_flat.fs" open="0" top="0" tabpos="6">
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="shader_flat.vs" open="0" top="0" tabpos="7">
 		<Cursor position="0" topLine="0" />
 	</File>
+	<File name="..\..\include\bmp.h" open="1" top="0" tabpos="4">
+		<Cursor position="1550" topLine="108" />
+	</File>
 	<File name="..\..\include\camera.h" open="0" top="0" tabpos="3">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="..\..\include\char.h" open="1" top="1" tabpos="2">
-		<Cursor position="2043" topLine="39" />
+	<File name="..\..\include\char.h" open="1" top="0" tabpos="2">
+		<Cursor position="2043" topLine="84" />
 	</File>
 	<File name="..\..\include\shader.h" open="0" top="0" tabpos="4">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="..\..\include\stb_image.h" open="1" top="0" tabpos="7">
+	<File name="..\..\include\stb_image.h" open="0" top="0" tabpos="7">
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="..\..\include\ter.h" open="1" top="0" tabpos="3">
-		<Cursor position="0" topLine="0" />
+		<Cursor position="2656" topLine="96" />
 	</File>
 </CodeBlocks_layout_file>
