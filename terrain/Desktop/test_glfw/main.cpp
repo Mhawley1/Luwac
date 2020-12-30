@@ -96,7 +96,7 @@ int main()
     unsigned int terrain_length = 50 ;
       Terrain_gen level;
     std::vector<unsigned int> indicies = level.indicies_gen (terrain_length,terrain_height);
-    std::vector<float> verticies = level.verticies_gen(terrain_length,terrain_height,"nothing ");
+    std::vector<float> verticies = level.verticies_gen(terrain_length,terrain_height,"..\\..\\include\\test.bmp");
       unsigned int ind_num_elements_2 = indicies.size();
     cout << "indicies variable" << ind_num_elements_2  << endl;
 
