@@ -107,7 +107,7 @@ int main()
     std::vector<unsigned int> indicies_ui = feedback.gen_UI_space_i();
     std::array<float,100> verticies_ui = feedback.gen_UI_space_v();
 
-    verticies_ui = feedback.Update_disp('i',111.111f,'b',2.222222f);
+
     //end flat plane for text
 
     // start terrain buffers
@@ -288,7 +288,14 @@ int main()
 
             ourShader_2.use();
             glBindTexture(GL_TEXTURE_2D, texture_face);
+            //pass in new vertexes
+             verticies_ui = feedback.Update_disp('i',111.111f,'b',2.222222f);
+            // update the vertex buffer for the UI interface
+             glBufferSubData(GL_ARRAY_BUFFER, 0,verticies_ui.size() * sizeof(verticies_ui[0]),&verticies_ui[0]);
+
             glBindVertexArray(VAO_1);
+
+
             glDrawElements(GL_TRIANGLES, 30, GL_UNSIGNED_INT, 0);
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         // -------------------------------------------------------------------------------
