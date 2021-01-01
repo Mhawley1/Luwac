@@ -1224,3 +1224,76 @@
 	<fstream>
 	<array>
 
+1609423554 source:c:\users\mathe\desktop\luwak\downloads\glad\src\glad.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<glad/glad.h>
+	<windows.h>
+	<winapifamily.h>
+	<dlfcn.h>
+
+1609423555 source:c:\users\mathe\desktop\luwak\src\shader.cpp
+
+1609423553 source:c:\users\mathe\desktop\luwak\desktop\test_glfw\main.cpp
+	<glad/glad.h>
+	<GLFW/glfw3.h>
+	<glm/glm.hpp>
+	<glm/gtc/matrix_transform.hpp>
+	<glm/gtc/type_ptr.hpp>
+	"stb_image.h"
+	"camera.h"
+	"shader.h"
+	"ter.h"
+	"char.h"
+	<iostream>
+
+1609423555 c:\users\mathe\desktop\luwak\include\stb_image.h
+	"stb_image.h"
+	<stdio.h>
+	<stdlib.h>
+	<stdarg.h>
+	<stddef.h>
+	<stdlib.h>
+	<string.h>
+	<limits.h>
+	<math.h>
+	<stdio.h>
+	<assert.h>
+	<stdint.h>
+	<emmintrin.h>
+	<intrin.h>
+	<arm_neon.h>
+
+1609423555 c:\users\mathe\desktop\luwak\include\camera.h
+	<glad/glad.h>
+	<glm/glm.hpp>
+	<glm/gtc/matrix_transform.hpp>
+	<vector>
+
+1609423555 c:\users\mathe\desktop\luwak\include\shader.h
+	<glad/glad.h>
+	<glm/glm.hpp>
+	<string>
+	<fstream>
+	<sstream>
+	<iostream>
+
+1609423555 c:\users\mathe\desktop\luwak\include\ter.h
+	<iostream>
+	<vector>
+	<fstream>
+	"bmp.h"
+
+1609423555 c:\users\mathe\desktop\luwak\include\bmp.h
+	<iostream>
+	<vector>
+	<fstream>
+	<math.h>
+
+1609529480 c:\users\mathe\desktop\luwak\include\char.h
+	<iostream>
+	<vector>
+	<fstream>
+	<array>
+

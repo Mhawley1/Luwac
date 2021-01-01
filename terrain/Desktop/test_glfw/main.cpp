@@ -289,7 +289,7 @@ int main()
             ourShader_2.use();
             glBindTexture(GL_TEXTURE_2D, texture_face);
             //pass in new vertexes
-             verticies_ui = feedback.Update_disp('i',111.111f,'b',2.222222f);
+             verticies_ui = feedback.Update_disp('x',111.111f,'b',2.222222f);
             // update the vertex buffer for the UI interface
              glBufferSubData(GL_ARRAY_BUFFER, 0,verticies_ui.size() * sizeof(verticies_ui[0]),&verticies_ui[0]);
 
