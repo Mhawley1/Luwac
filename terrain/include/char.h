@@ -330,7 +330,7 @@ std::array<float,8> SandR_values = {
         0.3f, 0.75f, // top right
         0.3f, 1.0f,
         0.4f, 1.0f,
-        0.4f, 0.5f,
+        0.4f, 0.75f,
         };
          break;
          case 'y' :
@@ -339,7 +339,7 @@ std::array<float,8> SandR_values = {
         0.4f, 0.75f, // top right
         0.4f, 1.0f,
         0.5f, 1.0f,
-        0.5f, 0.5f,
+        0.5f, 0.75f,
         };
          break;
          case 'z' :
@@ -348,7 +348,7 @@ std::array<float,8> SandR_values = {
         0.5f, 0.75f, // top right
         0.5f, 1.0f,
         0.6f, 1.0f,
-        0.6f, 0.5f,
+        0.6f, 0.75f,
         };
          break;
          case '1' :
