@@ -15,11 +15,13 @@
 
 
 
+// forward declarations .
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 void processInput(GLFWwindow *window);
+unsigned int loadTexture(const char *path);
 
 // settings
 const unsigned int SCR_WIDTH = 800;
@@ -88,6 +90,9 @@ int main()
     // ------------------------------------
     Shader ourShader_2("shader_flat.vs", "shader_flat.fs");
 
+    // build and compile our shader zprogram
+    // ------------------------------------
+    Shader ourShader_3("shader_flat.vs", "shader_flat.fs");
 
 
 
@@ -103,24 +108,31 @@ int main()
     // end terrain clas
 
     // start char UI class
-    char_ui_gen feedback;
-    std::vector<unsigned int> indicies_ui = feedback.gen_UI_space_i();
-    std::array<float,100> verticies_ui = feedback.gen_UI_space_v();
+    // line 1
+    char_ui_gen feedback_1;
+    std::vector<unsigned int> indicies_ui_1 = feedback_1.gen_UI_space_i();
+    std::array<float,100> verticies_ui_1 = feedback_1.gen_UI_space_v();
+    //end line 1
+    // line 2
+    char_ui_gen feedback_2;
+    std::vector<unsigned int> indicies_ui_2 = feedback_2.gen_UI_space_i();
+    std::array<float,100> verticies_ui_2 = feedback_2.gen_UI_space_v();
+    //end line 2
+    // line 3
+    char_ui_gen feedback_3;
+    std::vector<unsigned int> indicies_ui_3 = feedback_3.gen_UI_space_i();
+    std::array<float,100> verticies_ui_3 = feedback_3.gen_UI_space_v();
+    //end line 3
 
 
-    //end flat plane for text
 
     // start terrain buffers
     unsigned int VBO, VAO, EBO;
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
     glGenBuffers(1, &EBO);
-
     glBindVertexArray(VAO);
-
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
-
-
   //  glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
     glBufferData(GL_ARRAY_BUFFER, verticies.size() * sizeof(verticies[0]), &verticies[0], GL_STATIC_DRAW); // this line fails after certain number of triangles
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
@@ -132,97 +144,32 @@ int main()
     // texture coord attribute
     glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
     glEnableVertexAttribArray(1);
-
-
     // end terrain buffers
 
 
-    // start flat text buffers
+    // start flat text buffers line 1
      unsigned int VBO_1, VAO_1, EBO_1;
     glGenVertexArrays(1, &VAO_1);
     glGenBuffers(1, &VBO_1);
     glGenBuffers(1, &EBO_1);
-
     glBindVertexArray(VAO_1);
-
     glBindBuffer(GL_ARRAY_BUFFER, VBO_1);
-    glBufferData(GL_ARRAY_BUFFER, verticies_ui.size() * sizeof(verticies_ui[0]), &verticies_ui[0], GL_STATIC_DRAW);
-
+    glBufferData(GL_ARRAY_BUFFER, verticies_ui_1.size() * sizeof(verticies_ui_1[0]), &verticies_ui_1[0], GL_STATIC_DRAW);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO_1);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, indicies_ui.size() * sizeof(indicies_ui[0]), &indicies_ui[0], GL_STATIC_DRAW);
-
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, indicies_ui_1.size() * sizeof(indicies_ui_1[0]), &indicies_ui_1[0], GL_STATIC_DRAW);
     // position attribute
     glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(2);
     // texture coord attribute
     glVertexAttribPointer(3, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
     glEnableVertexAttribArray(3);
-    // end flat text buffers
+    // end flat text buffers 1
 
+    // texture subroutine .
 
+    unsigned int texture = loadTexture("..\\..\\include\\civet.jpg");
+    unsigned int texture_face = loadTexture("..\\..\\include\\text.png");
 
-    // load main terrain texture
-    // -------------------------
-    unsigned int texture;
-    glGenTextures(1, &texture);
-    glBindTexture(GL_TEXTURE_2D, texture); // all upcoming GL_TEXTURE_2D operations now have effect on this texture object
-    // set the texture wrapping parameters
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	// set texture wrapping to GL_REPEAT (default wrapping method)
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    // set texture filtering parameters
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-
-    // load image, create texture and generate mipmaps
-    int width, height, nrChannels;
-    // The FileSystem::getPath(...) is part of the GitHub repository so we can find files on any IDE/platform; replace it with your own image path.
-    unsigned char *data = stbi_load("..\\..\\include\\civet.jpg", &width, &height, &nrChannels, 0);
-    if (data)
-    {
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
-        glGenerateMipmap(GL_TEXTURE_2D);
-    }
-    else
-    {
-        std::cout << "Failed to load texture" << std::endl;
-    }
-    stbi_image_free(data);
-
-
-    // end load main texture
-
-
-    // load main face texture
-    unsigned int texture_face;
-    glGenTextures(1, &texture_face);
-    glBindTexture(GL_TEXTURE_2D, texture_face); // all upcoming GL_TEXTURE_2D operations now have effect on this texture object
-    // set the texture wrapping parameters
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	// set texture wrapping to GL_REPEAT (default wrapping method)
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    // set texture filtering parameters
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-
-    // load image, create texture and generate mipmaps
-    int width_face, height_face, nrChannels_face;
-    // The FileSystem::getPath(...) is part of the GitHub repository so we can find files on any IDE/platform; replace it with your own image path.
-    unsigned char *data_face = stbi_load("..\\..\\include\\text.png", &width, &height, &nrChannels, 0);
-    if (data_face)
-    {
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data_face);
-        glGenerateMipmap(GL_TEXTURE_2D);
-    }
-    else
-    {
-        std::cout << "Failed to load texture grass" << std::endl;
-    }
-    stbi_image_free(data_face);
-
-
-
-    // end load main face texture
 
 
      // tell opengl for each sampler to which texture unit it belongs to (only has to be done once)  // MAY NOW BE NEEDED
@@ -236,6 +183,10 @@ int main()
     ourShader_2.setInt("texture3", 2);
     ourShader_2.setInt("texture4", 3);
 
+    // shader for 2d
+    ourShader_3.use();
+    ourShader_3.setInt("texture3", 2);
+    ourShader_3.setInt("texture4", 3);
 
     // uncomment this call to draw in wireframe polygons.
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
@@ -275,7 +226,7 @@ int main()
         glm::mat4 view = camera.GetViewMatrix();
         ourShader.setMat4("view", view);
 
-        // render boxes
+        // render terrain
         glBindVertexArray(VAO);
 
             glm::mat4 model = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
@@ -286,20 +237,63 @@ int main()
 
             glDrawElements(GL_TRIANGLE_STRIP, ind_num_elements_2, GL_UNSIGNED_INT,0 );
 
+
+
+            // line 1
+            // translate letters to the side
+            glm::mat4 transform = glm::mat4(1.0);
+            transform = glm::translate(transform, glm::vec3(-0.5f, -0.5f, 0.0f));
+            // line 2
+            // translate letters to the side
+            glm::mat4 transform_2 = glm::mat4(1.0);
+            transform_2 = glm::translate(transform_2, glm::vec3(-0.5f, -0.2f, 0.0f));
+            // line 3
+            // translate letters to the side
+            glm::mat4 transform_3 = glm::mat4(1.0);
+            transform_3 = glm::translate(transform_3, glm::vec3(-0.5f, -0.0f, 0.0f));
+
+
+           // get matrix's uniform location and set matrix
             ourShader_2.use();
             glBindTexture(GL_TEXTURE_2D, texture_face);
+            unsigned int transformLoc = glGetUniformLocation(ourShader_2.ID, "transform");
+            glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(transform));
 
-            // fetch current XYZ pos
+            // fetch current XYZ os
             glm::vec3 pos = camera.GetXYZPosition();
             //pass in new vertexes
-             verticies_ui = feedback.Update_disp('x',pos.x,'b',2.222222f);
+             verticies_ui_1 = feedback_1.Update_disp('x',pos.x);
             // update the vertex buffer for the UI interface
-             glBufferSubData(GL_ARRAY_BUFFER, 0,verticies_ui.size() * sizeof(verticies_ui[0]),&verticies_ui[0]);
-
+             glBufferSubData(GL_ARRAY_BUFFER, 0,verticies_ui_1.size() * sizeof(verticies_ui_1[0]),&verticies_ui_1[0]);
             glBindVertexArray(VAO_1);
-
-
             glDrawElements(GL_TRIANGLES, 30, GL_UNSIGNED_INT, 0);
+
+
+            glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(transform_2));
+            verticies_ui_1 = feedback_1.Update_disp('y',pos.y);
+            glBufferSubData(GL_ARRAY_BUFFER, 0,verticies_ui_1.size() * sizeof(verticies_ui_1[0]),&verticies_ui_1[0]);
+            glDrawElements(GL_TRIANGLES, 30, GL_UNSIGNED_INT, 0);
+
+            glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(transform_3));
+            verticies_ui_1 = feedback_1.Update_disp('z',pos.z);
+            glBufferSubData(GL_ARRAY_BUFFER, 0,verticies_ui_1.size() * sizeof(verticies_ui_1[0]),&verticies_ui_1[0]);
+            glDrawElements(GL_TRIANGLES, 30, GL_UNSIGNED_INT, 0);
+
+
+
+            // end line 1
+
+            /*
+            // start line 2
+            //pass in new vertexes
+            ourShader_2.use();
+             verticies_ui_1 = feedback_2.Update_disp('y',pos.y);
+
+            glBindVertexArray(VAO_2);
+            glDrawElements(GL_TRIANGLES, 30, GL_UNSIGNED_INT, 0);
+            */
+            // end line 2
+
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         // -------------------------------------------------------------------------------
         glfwSwapBuffers(window);
@@ -314,6 +308,7 @@ int main()
     glDeleteVertexArrays(1, &VAO_1);
     glDeleteBuffers(1, &VBO_1);
     glDeleteBuffers(1, &EBO_1);
+
 
     // glfw: terminate, clearing all previously allocated GLFW resources.
     // ------------------------------------------------------------------
@@ -375,4 +370,43 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos)
     lastY = ypos;
 
     camera.ProcessMouseMovement(xoffset, yoffset);
+}
+
+// utility function for loading a 2D texture from file
+// ---------------------------------------------------
+unsigned int loadTexture(char const * path)
+{
+    unsigned int textureID;
+    glGenTextures(1, &textureID);
+
+    int width, height, nrComponents;
+    unsigned char *data = stbi_load(path, &width, &height, &nrComponents, 0);
+    if (data)
+    {
+        GLenum format;
+        if (nrComponents == 1)
+            format = GL_RED;
+        else if (nrComponents == 3)
+            format = GL_RGB;
+        else if (nrComponents == 4)
+            format = GL_RGBA;
+
+        glBindTexture(GL_TEXTURE_2D, textureID);
+        glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
+        glGenerateMipmap(GL_TEXTURE_2D);
+
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, format == GL_RGBA ? GL_CLAMP_TO_EDGE : GL_REPEAT); // for this tutorial: use GL_CLAMP_TO_EDGE to prevent semi-transparent borders. Due to interpolation it takes texels from next repeat
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, format == GL_RGBA ? GL_CLAMP_TO_EDGE : GL_REPEAT);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+        stbi_image_free(data);
+    }
+    else
+    {
+        std::cout << "Texture failed to load at path: " << path << std::endl;
+        stbi_image_free(data);
+    }
+
+    return textureID;
 }

@@ -24,7 +24,7 @@ class char_ui_gen {
     // for indicy return
     std::vector<unsigned int> gen_UI_space_i (void);
 
-    std::array<float,100> Update_disp (char, float, char, float);
+    std::array<float,100> Update_disp (char, float);
 
     std::array<float,100> face_vertices = {
             // positions         // texture coords
@@ -478,7 +478,7 @@ std::array<float,8> SandR_values = {
         };
          break;
       default :
-         cout << "character not found" << endl;
+         break;
    }
 
 
@@ -486,7 +486,7 @@ return SandR_values;
 };
 
 // pass in 4 character sets to update verticies S and T according to Letter map
-std::array<float,100> char_ui_gen::Update_disp (char feed1, float feed2, char feed3, float feed4) {
+std::array<float,100> char_ui_gen::Update_disp (char feed1, float feed2) {
 
 letter_1 = feed1;
 input_var1 = roundf(feed2 * 100) / 100;
@@ -494,8 +494,6 @@ input_var1 = roundf(feed2 * 100) / 100;
 char array1[10];
 sprintf(array1, "%f", input_var1);
 
-letter_2 = feed3;
-input_var2 = roundf(feed4 * 100) / 100;
 
 char array2[10];
 sprintf(array2, "%f", input_var2);
